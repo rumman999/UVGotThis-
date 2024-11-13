@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UV Got This?</title>
+  </head>
+  <body>
+    <p>Pick your city</p>
+
+    <form action="/submit" method="POST">
+      <label for="city">
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Type your city name here..."
+          required
+        />
+      </label>
+      <div id="suggestions"></div>
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (search) { %> <% if (UV<2) { %>
+    <p>UV index is currently <%= UV %> in <%= city %>.</p>
+    <p>Suncreen not needed.</p>
+    <% } else{ %>
+    <p>UV index is currently <%= UV %> in <%= city %>.</p>
+    <p>Sunscreen is recommended.</p>
+    <% } %> <% } %>
+
+    <script src="/js/frontend.js"></script>
+  </body>
+</html>
